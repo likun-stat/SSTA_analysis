@@ -1,0 +1,60 @@
+Grid: nlon=84, nlat=33, m0=2772, ocean m=2512
+Building geographic distance matrix over ocean cells...
+Eigen-decomposing (this is a one-time m x m cost)...
+  done in 27.0s
+Low-rank kernel: r=40 retains 100.0% of the correlation matrix's trace
+fno_dstm2d_direct_h6.R: setup complete (data, kernel, architecture, loss).
+fit_fno_dstm2d_direct / predict_fno_dstm2d_direct defined.
+X_trainvalid=574 rows, inner_train_frac=0.8240
+
+================ FNO-DST tuning grid: 9 configs ================
+
+--- config 1/9: width=16 mode_cap=low (modes_lon=6, modes_lat=5) ---
+Device: cpu | windows: 566 | grid: 84x33 (m0), ocean m=2512 | train/valid/internal-test: 466/99/1
+FNO mean parameters: 126501 | scale-network parameters: 10049
+Mean epoch 001 | train_mse = 0.961634 | valid_mse = 1.292030
+Mean epoch 002 | train_mse = 0.787188 | valid_mse = 1.034551
+Mean epoch 003 | train_mse = 0.743194 | valid_mse = 0.903350
+Mean epoch 004 | train_mse = 0.718012 | valid_mse = 0.898461
+Mean epoch 005 | train_mse = 0.682454 | valid_mse = 0.930637
+Mean epoch 006 | train_mse = 0.667398 | valid_mse = 0.925838
+Mean epoch 007 | train_mse = 0.619631 | valid_mse = 0.932367
+Mean epoch 008 | train_mse = 0.603743 | valid_mse = 1.002953
+Mean epoch 009 | train_mse = 0.575161 | valid_mse = 0.969242
+Mean epoch 010 | train_mse = 0.539281 | valid_mse = 1.074106
+Mean epoch 011 | train_mse = 0.514806 | valid_mse = 1.028108
+Mean epoch 012 | train_mse = 0.494906 | valid_mse = 1.021256
+Mean-stage early stopping at epoch 12.
+NLL epoch 001 | update_mean = TRUE | train_nll = 1847.1825 | valid_nll = 1999.8417 | valid_mse = 0.938953 | mean(sd^2) train/valid = 1.6300/3.3120
+NLL epoch 002 | update_mean = FALSE | train_nll = 1788.4434 | valid_nll = 2261.9721 | valid_mse = 0.974669 | mean(sd^2) train/valid = 2.3983/3.1893
+NLL epoch 003 | update_mean = FALSE | train_nll = 1882.6468 | valid_nll = 2331.7914 | valid_mse = 1.005108 | mean(sd^2) train/valid = 2.4844/2.5890
+NLL epoch 004 | update_mean = FALSE | train_nll = 1928.9772 | valid_nll = 2346.3250 | valid_mse = 1.025499 | mean(sd^2) train/valid = 2.5072/3.7022
+NLL epoch 005 | update_mean = FALSE | train_nll = 1963.4180 | valid_nll = 2351.9941 | valid_mse = 1.041485 | mean(sd^2) train/valid = 2.5855/3.3398
+NLL epoch 006 | update_mean = TRUE | train_nll = 1695.7884 | valid_nll = 1928.8890 | valid_mse = 0.909710 | mean(sd^2) train/valid = 2.5219/3.0466
+NLL epoch 007 | update_mean = FALSE | train_nll = 1651.3955 | valid_nll = 2085.9044 | valid_mse = 0.932639 | mean(sd^2) train/valid = 3.0186/2.8899
+NLL epoch 008 | update_mean = FALSE | train_nll = 1698.7349 | valid_nll = 2052.8818 | valid_mse = 0.934281 | mean(sd^2) train/valid = 2.8803/3.2442
+NLL epoch 009 | update_mean = FALSE | train_nll = 1699.3828 | valid_nll = 2070.7018 | valid_mse = 0.934093 | mean(sd^2) train/valid = 2.9937/3.0899
+NLL epoch 010 | update_mean = FALSE | train_nll = 1698.5171 | valid_nll = 2062.6322 | valid_mse = 0.933827 | mean(sd^2) train/valid = 2.9344/3.5556
+NLL epoch 011 | update_mean = TRUE | train_nll = 1604.2199 | valid_nll = 1922.4479 | valid_mse = 0.919336 | mean(sd^2) train/valid = 2.9535/3.3773
+NLL epoch 012 | update_mean = FALSE | train_nll = 1543.3104 | valid_nll = 1942.4710 | valid_mse = 0.932389 | mean(sd^2) train/valid = 2.9965/3.6853
+NLL epoch 013 | update_mean = FALSE | train_nll = 1563.4659 | valid_nll = 1951.0376 | valid_mse = 0.933279 | mean(sd^2) train/valid = 2.9628/3.2802
+NLL epoch 014 | update_mean = FALSE | train_nll = 1562.7806 | valid_nll = 1946.4070 | valid_mse = 0.933173 | mean(sd^2) train/valid = 3.0256/3.6961
+NLL epoch 015 | update_mean = FALSE | train_nll = 1564.5276 | valid_nll = 1947.2739 | valid_mse = 0.933095 | mean(sd^2) train/valid = 2.9959/3.6954
+NLL epoch 016 | update_mean = TRUE | train_nll = 1539.6219 | valid_nll = 2000.1288 | valid_mse = 0.943597 | mean(sd^2) train/valid = 2.9674/3.2421
+NLL epoch 017 | update_mean = FALSE | train_nll = 1517.9810 | valid_nll = 2001.1830 | valid_mse = 0.956578 | mean(sd^2) train/valid = 3.0310/3.5543
+NLL epoch 018 | update_mean = FALSE | train_nll = 1560.7148 | valid_nll = 2010.3810 | valid_mse = 0.957954 | mean(sd^2) train/valid = 2.9975/3.0951
+NLL epoch 019 | update_mean = FALSE | train_nll = 1560.6892 | valid_nll = 2017.9028 | valid_mse = 0.957725 | mean(sd^2) train/valid = 3.0545/3.9588
+NLL epoch 020 | update_mean = FALSE | train_nll = 1562.7576 | valid_nll = 2020.8781 | valid_mse = 0.957378 | mean(sd^2) train/valid = 3.0619/2.8008
+NLL epoch 021 | update_mean = TRUE | train_nll = 1494.9321 | valid_nll = 2009.7743 | valid_mse = 0.942723 | mean(sd^2) train/valid = 2.9192/3.4677
+NLL epoch 022 | update_mean = FALSE | train_nll = 1435.1044 | valid_nll = 2071.8692 | valid_mse = 0.981375 | mean(sd^2) train/valid = 2.9715/3.2584
+NLL epoch 023 | update_mean = FALSE | train_nll = 1447.6588 | valid_nll = 2082.0438 | valid_mse = 0.983968 | mean(sd^2) train/valid = 2.9697/3.6472
+NLL epoch 024 | update_mean = FALSE | train_nll = 1447.8526 | valid_nll = 2079.2830 | valid_mse = 0.983766 | mean(sd^2) train/valid = 2.9764/3.4936
+NLL epoch 025 | update_mean = FALSE | train_nll = 1446.7888 | valid_nll = 2074.4773 | valid_mse = 0.983486 | mean(sd^2) train/valid = 2.9917/3.4526
+[width=16 modes_lon=6 modes_lat=5] fit 1657.6s, params=126501, CRPS(valid)=0.3314, mspe=0.2967
+
+--- config 2/9: width=32 mode_cap=low (modes_lon=6, modes_lat=5) ---
+Device: cpu | windows: 566 | grid: 84x33 (m0), ocean m=2512 | train/valid/internal-test: 466/99/1
+FNO mean parameters: 500549 | scale-network parameters: 10049
+Mean epoch 001 | train_mse = 0.822909 | valid_mse = 1.172209
+Mean epoch 002 | train_mse = 0.747703 | valid_mse = 1.092317
+Mean epoch 003 | train_mse = 0.694638 | valid_mse = 1.025018

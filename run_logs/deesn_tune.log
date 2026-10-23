@@ -1,0 +1,66 @@
+
+Attaching package: ‘inline’
+
+The following object is masked from ‘package:Rcpp’:
+
+    registerPlugin
+
+Registered S3 methods overwritten by 'RcppEigen':
+  method               from         
+  predict.fastLm       RcppArmadillo
+  print.fastLm         RcppArmadillo
+  summary.fastLm       RcppArmadillo
+  print.summary.fastLm RcppArmadillo
+
+Attaching package: ‘RcppEigen’
+
+The following objects are masked from ‘package:RcppArmadillo’:
+
+    fastLm, fastLmPure
+
+Local origins: 550 total, 467 train, 83 valid
+
+================ D-EESN tuning grid: 9 configs ================
+
+--- config 1/9: numLayers=3 layerOneDimRed=5 ---
+[numLayers=3 layerOneDimRed=5] fit_time=0.6s CRPS(valid)=0.2943 mspe=0.2487
+
+--- config 2/9: numLayers=5 layerOneDimRed=5 ---
+[numLayers=5 layerOneDimRed=5] fit_time=0.9s CRPS(valid)=0.2887 mspe=0.2594
+
+--- config 3/9: numLayers=7 layerOneDimRed=5 ---
+[numLayers=7 layerOneDimRed=5] fit_time=1.1s CRPS(valid)=0.2878 mspe=0.2700
+
+--- config 4/9: numLayers=3 layerOneDimRed=10 ---
+[numLayers=3 layerOneDimRed=10] fit_time=0.7s CRPS(valid)=0.2796 mspe=0.2367
+
+--- config 5/9: numLayers=5 layerOneDimRed=10 ---
+[numLayers=5 layerOneDimRed=10] fit_time=1.4s CRPS(valid)=0.2757 mspe=0.2438
+
+--- config 6/9: numLayers=7 layerOneDimRed=10 ---
+[numLayers=7 layerOneDimRed=10] fit_time=2.4s CRPS(valid)=0.2687 mspe=0.2448
+
+--- config 7/9: numLayers=3 layerOneDimRed=15 ---
+[numLayers=3 layerOneDimRed=15] fit_time=0.8s CRPS(valid)=0.2791 mspe=0.2402
+
+--- config 8/9: numLayers=5 layerOneDimRed=15 ---
+[numLayers=5 layerOneDimRed=15] fit_time=1.2s CRPS(valid)=0.2674 mspe=0.2372
+
+--- config 9/9: numLayers=7 layerOneDimRed=15 ---
+[numLayers=7 layerOneDimRed=15] fit_time=2.2s CRPS(valid)=0.2638 mspe=0.2402
+
+================ D-EESN tuning results, sorted by validation CRPS ================
+ numLayers layerOneDimRed  fit_time  crps_val      mspe
+         7             15 2.2259929 0.2638312 0.2402381
+         5             15 1.1938260 0.2674368 0.2371614
+         7             10 2.3827839 0.2686905 0.2447512
+         5             10 1.3842459 0.2757149 0.2438297
+         3             15 0.8391678 0.2791429 0.2402101
+         3             10 0.7470100 0.2795950 0.2367080
+         7              5 1.0596669 0.2878407 0.2699551
+         5              5 0.9158058 0.2887039 0.2593511
+         3              5 0.5943410 0.2943333 0.2486770
+
+Winner: numLayers=7, layerOneDimRed=15 (CRPS=0.2638)
+Saved deesn_tune_h6_results.rds
+Done.

@@ -1,0 +1,226 @@
+dsno_h6.R: Dual-Stream Neural Operator pipeline defined.
+
+================ Dual-Stream NO tuning grid: 9 configs ================
+
+--- config 1/9: K=3 D=2 ---
+  epoch 1 valid_mse=1.03358
+  epoch 1 valid_mse=1.04054
+  epoch 1 valid_mse=1.01791
+  epoch 1 valid_mse=1.04183
+  epoch 1 valid_mse=1.01728
+  epoch 1 valid_mse=1.02291
+  epoch 1 valid_mse=1.03457
+  epoch 1 valid_mse=1.02121
+  epoch 1 valid_mse=1.02137
+  epoch 1 valid_mse=1.03329
+  epoch 1 valid_mse=1.04492
+  epoch 1 valid_mse=1.02962
+  epoch 1 valid_mse=1.03336
+  epoch 1 valid_mse=1.01457
+  epoch 1 valid_mse=1.03100
+  epoch 1 valid_mse=1.04112
+  epoch 1 valid_mse=1.02351
+  epoch 1 valid_mse=1.02043
+  epoch 1 valid_mse=1.03409
+  epoch 1 valid_mse=1.02573
+[K=3 D=2] d_in=162 fit_time=29.0s CRPS(valid)=0.3830 mspe=0.3117
+
+--- config 2/9: K=5 D=2 ---
+  epoch 1 valid_mse=1.03531
+  epoch 1 valid_mse=1.02442
+  epoch 1 valid_mse=1.02092
+  epoch 1 valid_mse=1.03074
+  epoch 1 valid_mse=1.03797
+  epoch 1 valid_mse=1.01749
+  epoch 1 valid_mse=1.04026
+  epoch 1 valid_mse=1.02267
+  epoch 1 valid_mse=1.03845
+  epoch 1 valid_mse=1.03136
+  epoch 1 valid_mse=1.03734
+  epoch 1 valid_mse=1.05543
+  epoch 1 valid_mse=1.03699
+  epoch 1 valid_mse=1.03139
+  epoch 1 valid_mse=1.02436
+  epoch 1 valid_mse=1.03800
+  epoch 1 valid_mse=1.03253
+  epoch 1 valid_mse=1.03961
+  epoch 1 valid_mse=1.02762
+  epoch 1 valid_mse=1.02877
+[K=5 D=2] d_in=216 fit_time=63.5s CRPS(valid)=0.3867 mspe=0.3190
+
+--- config 3/9: K=8 D=2 ---
+  epoch 1 valid_mse=1.04028
+  epoch 1 valid_mse=1.03655
+  epoch 1 valid_mse=1.01474
+  epoch 1 valid_mse=1.02143
+  epoch 1 valid_mse=1.03233
+  epoch 1 valid_mse=1.02719
+  epoch 1 valid_mse=1.02374
+  epoch 1 valid_mse=1.02771
+  epoch 1 valid_mse=1.03088
+  epoch 1 valid_mse=1.03398
+  epoch 1 valid_mse=1.03014
+  epoch 1 valid_mse=1.02645
+  epoch 1 valid_mse=1.01649
+  epoch 1 valid_mse=1.02923
+  epoch 1 valid_mse=1.02113
+  epoch 1 valid_mse=1.03795
+  epoch 1 valid_mse=1.03071
+  epoch 1 valid_mse=1.02444
+  epoch 1 valid_mse=1.02478
+  epoch 1 valid_mse=1.02566
+[K=8 D=2] d_in=297 fit_time=74.7s CRPS(valid)=0.3834 mspe=0.3128
+
+--- config 4/9: K=3 D=4 ---
+  epoch 1 valid_mse=1.04385
+  epoch 1 valid_mse=1.03077
+  epoch 1 valid_mse=1.02875
+  epoch 1 valid_mse=1.03758
+  epoch 1 valid_mse=1.04264
+  epoch 1 valid_mse=1.03132
+  epoch 1 valid_mse=1.04771
+  epoch 1 valid_mse=1.02481
+  epoch 1 valid_mse=1.04097
+  epoch 1 valid_mse=1.03211
+  epoch 1 valid_mse=1.03817
+  epoch 1 valid_mse=1.04956
+  epoch 1 valid_mse=1.02898
+  epoch 1 valid_mse=1.03695
+  epoch 1 valid_mse=1.02372
+  epoch 1 valid_mse=1.04458
+  epoch 1 valid_mse=1.03748
+  epoch 1 valid_mse=1.03235
+  epoch 1 valid_mse=1.03928
+  epoch 1 valid_mse=1.02565
+[K=3 D=4] d_in=216 fit_time=62.4s CRPS(valid)=0.3878 mspe=0.3221
+
+--- config 5/9: K=5 D=4 ---
+  epoch 1 valid_mse=1.03070
+  epoch 1 valid_mse=1.04303
+  epoch 1 valid_mse=1.01414
+  epoch 1 valid_mse=1.01474
+  epoch 1 valid_mse=1.03841
+  epoch 1 valid_mse=1.03237
+  epoch 1 valid_mse=1.04077
+  epoch 1 valid_mse=1.03331
+  epoch 1 valid_mse=1.03775
+  epoch 1 valid_mse=1.02759
+  epoch 1 valid_mse=1.04586
+  epoch 1 valid_mse=1.02487
+  epoch 1 valid_mse=1.04445
+  epoch 1 valid_mse=1.01973
+  epoch 1 valid_mse=1.03496
+  epoch 1 valid_mse=1.02778
+  epoch 1 valid_mse=1.02643
+  epoch 1 valid_mse=1.03355
+  epoch 1 valid_mse=1.03468
+  epoch 1 valid_mse=1.03507
+[K=5 D=4] d_in=270 fit_time=86.0s CRPS(valid)=0.3896 mspe=0.3238
+
+--- config 6/9: K=8 D=4 ---
+  epoch 1 valid_mse=1.02189
+  epoch 1 valid_mse=1.03628
+  epoch 1 valid_mse=1.02868
+  epoch 1 valid_mse=1.01843
+  epoch 1 valid_mse=1.02928
+  epoch 1 valid_mse=1.03292
+  epoch 1 valid_mse=1.01421
+  epoch 1 valid_mse=1.02877
+  epoch 1 valid_mse=1.01996
+  epoch 1 valid_mse=1.03172
+  epoch 1 valid_mse=1.01756
+  epoch 1 valid_mse=1.04076
+  epoch 1 valid_mse=1.02509
+  epoch 1 valid_mse=1.02262
+  epoch 1 valid_mse=1.02994
+  epoch 1 valid_mse=1.04681
+  epoch 1 valid_mse=1.03368
+  epoch 1 valid_mse=1.01998
+  epoch 1 valid_mse=1.02426
+  epoch 1 valid_mse=1.02827
+[K=8 D=4] d_in=351 fit_time=64.6s CRPS(valid)=0.3877 mspe=0.3215
+
+--- config 7/9: K=3 D=6 ---
+  epoch 1 valid_mse=1.02719
+  epoch 1 valid_mse=1.02882
+  epoch 1 valid_mse=1.01579
+  epoch 1 valid_mse=1.01420
+  epoch 1 valid_mse=1.02562
+  epoch 1 valid_mse=1.04007
+  epoch 1 valid_mse=1.04387
+  epoch 1 valid_mse=1.03354
+  epoch 1 valid_mse=1.04061
+  epoch 1 valid_mse=1.04200
+  epoch 1 valid_mse=1.05046
+  epoch 1 valid_mse=1.02796
+  epoch 1 valid_mse=1.04099
+  epoch 1 valid_mse=1.02752
+  epoch 1 valid_mse=1.03243
+  epoch 1 valid_mse=1.02771
+  epoch 1 valid_mse=1.01573
+  epoch 1 valid_mse=1.03816
+  epoch 1 valid_mse=1.03740
+  epoch 1 valid_mse=1.02180
+[K=3 D=6] d_in=270 fit_time=52.5s CRPS(valid)=0.3896 mspe=0.3258
+
+--- config 8/9: K=5 D=6 ---
+  epoch 1 valid_mse=1.03642
+  epoch 1 valid_mse=0.99908
+  epoch 1 valid_mse=1.03759
+  epoch 1 valid_mse=1.02267
+  epoch 1 valid_mse=1.03527
+  epoch 1 valid_mse=1.02123
+  epoch 1 valid_mse=1.01810
+  epoch 1 valid_mse=1.02666
+  epoch 1 valid_mse=1.02473
+  epoch 1 valid_mse=1.02897
+  epoch 1 valid_mse=1.02850
+  epoch 1 valid_mse=1.04288
+  epoch 1 valid_mse=1.03548
+  epoch 1 valid_mse=1.03453
+  epoch 1 valid_mse=1.01862
+  epoch 1 valid_mse=1.02382
+  epoch 1 valid_mse=1.03448
+  epoch 1 valid_mse=1.02942
+  epoch 1 valid_mse=1.03724
+  epoch 1 valid_mse=1.02955
+[K=5 D=6] d_in=324 fit_time=293.2s CRPS(valid)=0.3884 mspe=0.3216
+
+--- config 9/9: K=8 D=6 ---
+  epoch 1 valid_mse=1.01072
+  epoch 1 valid_mse=1.03161
+  epoch 1 valid_mse=1.00852
+  epoch 1 valid_mse=1.02216
+  epoch 1 valid_mse=1.03352
+  epoch 1 valid_mse=1.03235
+  epoch 1 valid_mse=1.04259
+  epoch 1 valid_mse=1.03197
+  epoch 1 valid_mse=1.02389
+  epoch 1 valid_mse=1.01893
+  epoch 1 valid_mse=1.01121
+  epoch 1 valid_mse=1.04799
+  epoch 1 valid_mse=1.02405
+  epoch 1 valid_mse=1.02529
+  epoch 1 valid_mse=1.02079
+  epoch 1 valid_mse=1.02038
+  epoch 1 valid_mse=1.00818
+  epoch 1 valid_mse=1.03769
+  epoch 1 valid_mse=1.03042
+  epoch 1 valid_mse=1.02211
+[K=8 D=6] d_in=405 fit_time=89.6s CRPS(valid)=0.3849 mspe=0.3158
+
+================ Dual-Stream NO tuning results, sorted by validation CRPS ================
+ K D  W d_in  fit_time  crps_val      mspe
+ 3 2 36  162  28.97218 0.3829898 0.3116789
+ 8 2 36  297  74.68634 0.3834490 0.3128069
+ 8 6 36  405  89.61123 0.3848930 0.3157977
+ 5 2 36  216  63.51582 0.3867134 0.3189950
+ 8 4 36  351  64.56896 0.3876802 0.3215115
+ 3 4 36  216  62.41897 0.3877519 0.3221118
+ 5 6 36  324 293.16505 0.3884191 0.3215898
+ 5 4 36  270  85.96372 0.3896099 0.3238472
+ 3 6 36  270  52.52160 0.3896376 0.3258355
+
+Winner: K=3, D=2, W=36 (CRPS=0.3830)
+Saved dsno_tune_h6_results.rds
+Done.
