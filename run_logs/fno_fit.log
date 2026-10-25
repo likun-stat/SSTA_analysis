@@ -53,3 +53,32 @@ NLL epoch 024 | update_mean = FALSE | train_nll = 1239.7215 | valid_nll = 2215.4
 NLL epoch 025 | update_mean = FALSE | train_nll = 1240.3893 | valid_nll = 2205.2534 | valid_mse = 1.011940 | mean(sd^2) train/valid = 2.7986/3.1709
 NLL epoch 026 | update_mean = TRUE | train_nll = 1184.6461 | valid_nll = 2260.4568 | valid_mse = 1.098923 | mean(sd^2) train/valid = 2.7854/3.1865
 NLL epoch 027 | update_mean = FALSE | train_nll = 1147.5835 | valid_nll = 2284.2744 | valid_mse = 1.185509 | mean(sd^2) train/valid = 2.8090/2.7500
+NLL epoch 028 | update_mean = FALSE | train_nll = 1173.7155 | valid_nll = 2266.4477 | valid_mse = 1.191046 | mean(sd^2) train/valid = 2.7624/3.1481
+NLL epoch 029 | update_mean = FALSE | train_nll = 1174.4954 | valid_nll = 2267.2471 | valid_mse = 1.191008 | mean(sd^2) train/valid = 2.8300/3.0757
+NLL epoch 030 | update_mean = FALSE | train_nll = 1174.9100 | valid_nll = 2267.0864 | valid_mse = 1.190963 | mean(sd^2) train/valid = 2.7668/3.0812
+NLL epoch 031 | update_mean = TRUE | train_nll = 1135.9451 | valid_nll = 2278.0044 | valid_mse = 1.097428 | mean(sd^2) train/valid = 2.7740/3.0038
+NLL epoch 032 | update_mean = FALSE | train_nll = 1077.7221 | valid_nll = 2306.1790 | valid_mse = 1.092445 | mean(sd^2) train/valid = 2.7471/3.0152
+NLL epoch 033 | update_mean = FALSE | train_nll = 1082.1282 | valid_nll = 2308.1760 | valid_mse = 1.091915 | mean(sd^2) train/valid = 2.7586/2.8656
+NLL epoch 034 | update_mean = FALSE | train_nll = 1082.8036 | valid_nll = 2303.3226 | valid_mse = 1.091846 | mean(sd^2) train/valid = 2.7280/2.8756
+NLL epoch 035 | update_mean = FALSE | train_nll = 1082.6255 | valid_nll = 2304.2221 | valid_mse = 1.091842 | mean(sd^2) train/valid = 2.7281/2.9877
+NLL epoch 036 | update_mean = TRUE | train_nll = 1096.0921 | valid_nll = 2305.6592 | valid_mse = 1.123385 | mean(sd^2) train/valid = 2.7501/3.0167
+NLL-stage early stopping at epoch 36.
+
+Total fit time: 35.0 min
+Predicted 94 test origins, 2512 ocean cells, 500 ensemble members
+Saved fno_dstm2d_h6_tuned_raw.rds
+
+================ FNO-DST (TUNED), PHYSICAL grid space ================
+       metric  value
+    MSE_model 0.3324
+         CRPS 0.3593
+   twCRPS_u90 0.0376
+   twCRPS_u95 0.0225
+  MAE_extreme 1.3425
+ CRPS_extreme 0.8570
+Coverage:
+   50%    80%    90%    95% 
+0.7827 0.9718 0.9922 0.9973 
+
+Saved fno_dstm2d_h6_tuned_comparison.rds
+Done.

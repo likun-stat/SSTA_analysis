@@ -4,7 +4,7 @@ Probabilistic forecasting of sea-surface temperature anomalies (SSTA), 6 months 
 
 - **D-EESN** — Deep Ensemble Echo State Network (McDermott & Wikle, 2019)
 - **FNO-DSTM** — Fourier Neural Operator, direct space-time mapping
-- **DSNO** — Dual-Stream Neural Operator
+- **DSNO** — Dual-Stream Neural Operator (two configurations: our own tuned grid-search winner, and Wikle's published "Chris-exact" example — see Section 3 below)
 
 (A fourth family, GRU-based models, exists in the original project this was drawn from but is **not included here**.)
 
@@ -55,16 +55,33 @@ source("deesn_predict_oct2026.R") # ~2-3 min. Trains on all 676 months, forecast
 
 ### DSNO (Dual-Stream Neural Operator)
 
-```r
-source("dsno_tune_h6.R")         # ~10-15 min. Grid search over (K, D), fixed W=36.
-                                  # Saves dsno_tune_h6_results.rds.
-source("dsno_fit_h6.R")          # ~10-20 min. E=500 networks, test-set scores.
-                                  # Saves dsno_h6_comparison.rds.
-source("final_predict_dsno.R")   # ~10-20 min. All 676 months, Oct 2026 forecast.
-                                  # Saves final_dsno_oct2026.rds and .pdf.
-```
+DSNO is run in **two** configurations, both reported in `report.pdf`: our
+own tuned config (grid search over $K$, $D$ at fixed $p=27$ EOFs, matching
+every other model here) and **Chris-exact** ($p=10$, $K=5$, $D=4$, $W=36$
+— Wikle's own published example values). This isn't optional: the two
+configurations differ substantially (Section 4 of `report.pdf`), and the
+number of retained EOFs ($p$) turns out to matter more for DSNO's accuracy
+than the hyperparameters ($K$, $D$) our own tuning grid actually searched
+over — so reporting only the tuned config would understate what this
+architecture can do.
 
-A bonus, fully self-contained supplementary script, `chris_exact_replicate.R`, reruns DSNO with the hyperparameters from Wikle's own published example (`p=10, K=5, W=36, D=4`) instead of this study's tuned config, as a sanity check against the source implementation. Not required for the main pipeline.
+```r
+source("dsno_tune_h6.R")          # ~10-15 min. Grid search over (K, D), fixed p=27, W=36.
+                                   # Saves dsno_tune_h6_results.rds.
+source("dsno_fit_h6.R")           # ~35-40 min. Tuned config, E=500 networks, test-set scores
+                                   # (scored against the TRUE physical field, not an EOF-
+                                   # truncated reconstruction of it -- see report.pdf Section 1).
+                                   # Saves dsno_h6_comparison.rds.
+source("final_predict_dsno.R")    # ~35-40 min. Tuned config, all 676 months, Oct 2026 forecast.
+                                   # Saves final_dsno_oct2026.rds and .pdf.
+
+source("chris_exact_fit_h6.R")    # ~5-10 min. Chris-exact config (p=10), E=500, test-set scores.
+                                   # Saves chris_exact_h6_comparison.rds.
+source("chris_exact_replicate.R") # ~10-15 min. Chris-exact config, all 676 months, Oct 2026
+                                   # forecast AND its own 3-panel plot in one step (self-contained,
+                                   # no separate final_plot_oct2026.R call needed for this one).
+                                   # Saves chris_exact_oct2026.rds and .pdf.
+```
 
 ### FNO-DSTM (Fourier Neural Operator, direct)
 
@@ -81,13 +98,23 @@ FNO-DSTM is by far the most expensive of the three (tuning alone dominates; the 
 
 There is also an *untuned* baseline fit, `fno_dstm2d_fit_h6.R`, kept for reference in the original project; it is **not** part of the best-settings pipeline above and depends on a GRU-derived comparison file not included here, so don't run it as-is.
 
-## 4. What you get
+## 4. Plotting the forecasts
 
-Each `final_<model>_oct2026.rds` contains the October 2026 forecast as an ensemble of draws in EOF-coefficient space (`draws_pc`), reconstructed to the physical grid, plus summary stats (median, mean, 90% interval). Each `final_<model>_oct2026.pdf` plots the forecast field with uncertainty bands. The `<model>_h6_comparison.rds` / `<model>_tuned_comparison.rds` files hold test-set scores: MSE, CRPS, threshold-weighted CRPS at the 90th/95th percentile (extreme-event skill), and empirical coverage at the 50/80/90/95% levels.
+D-EESN's own `deesn_predict_oct2026.R` saves its forecast plot directly. For DSNO and FNO-DSTM, run the shared plotting script after their `final_predict_*.R` steps:
 
-To reproduce the comparison report included in this directory (`report.pdf`), run `generate_report.R` after all three pipelines above have completed.
+```r
+source("final_plot_oct2026.R")
+```
 
-## 5. Attribution
+This builds a joint (simultaneous, not just pointwise) 95% spatial confidence band via the max-statistic/envelope method, and saves a 3-panel (median, lower, upper) map per model: `final_dsno_oct2026.pdf`, `final_fno_dst_oct2026.pdf`. It's safe to run any time — it silently skips any model whose `final_*_oct2026.rds` doesn't exist yet (and skips GRU/CNN-IDE entirely, which aren't part of this directory).
+
+## 5. What you get
+
+Each `final_<model>_oct2026.rds` contains the October 2026 forecast as an ensemble of draws in EOF-coefficient space (`draws_pc`), reconstructed to the physical grid, plus summary stats (median, mean, 90% interval). Each `final_<model>_oct2026.pdf` (produced as above) plots the forecast field with its joint uncertainty band. The `<model>_h6_comparison.rds` / `<model>_tuned_comparison.rds` files hold test-set scores: MSE, CRPS, threshold-weighted CRPS at the 90th/95th percentile (extreme-event skill), and empirical coverage at the 50/80/90/95% levels.
+
+To reproduce the comparison report included in this directory (`report.pdf`), run `generate_report.R` after all three pipelines above (and the plotting step) have completed.
+
+## 6. Attribution
 
 - D-EESN: McDermott, P. L. and Wikle, C. K. (2019), "Deep echo state networks with uncertainty quantification for spatio-temporal forecasting," *Environmetrics*. Vendored code in `BD-EESN/` is the authors' own public implementation.
 - SST data: NOAA Extended Reconstructed SST v6 (ERSSTv6).

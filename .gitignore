@@ -1,0 +1,21 @@
+# LaTeX source and compilation artifacts.
+# report.pdf itself is NOT ignored -- that's the actual deliverable.
+# .log is scoped to the repo root only (leading slash) so run_logs/*.log
+# (R execution logs, not LaTeX byproducts) stay tracked.
+*.tex
+/*.aux
+/*.log
+/*.out
+/*.toc
+/*.synctex.gz
+/*.fls
+/*.fdb_latexmk
+/*.bbl
+/*.blg
+
+# R serialized data: regeneratable model outputs, caches, and raw
+# ensemble arrays -- not source, and some are large.
+*.rds
+
+# macOS
+.DS_Store
